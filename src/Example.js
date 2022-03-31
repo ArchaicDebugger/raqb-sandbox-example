@@ -6,6 +6,7 @@ import "react-awesome-query-builder/lib/css/styles.css";
 import "react-awesome-query-builder/lib/css/compact_styles.css"; //optional, for more compact styles
 import TextWidget from "./widgets/TextWidget";
 import WeirdWidget from "./widgets/CustomWidget";
+import OperatorDropdown from "./layout/OperatorDropdown";
 
 // You need to provide your own config. See below 'Config format'
 const config = {
@@ -55,6 +56,10 @@ const config = {
         }
       }
     }
+  },
+  settings: {
+    ...BasicConfig.settings,
+    renderOperator: props => <OperatorDropdown {...props} />
   }
 };
 
